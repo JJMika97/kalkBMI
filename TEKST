@@ -1,0 +1,12 @@
+import pandas as pd #zimportowanie bliblioteki PANDAS potrzebnej do manipulacji danymi
+import numpy as np #zimportowanie biblioteki NUMPY umożliwia wykonywanie operacji matematycznych na całych zbiorach danych.
+
+def BMI(waga, wzrost): #zdefiniowanie funkcji BMI opartej na dwóch zmiennych (waga i wzrost)
+    return waga / (wzrost / 100) ** 2 #zprecyzowanie wzoru funkcji BMI
+
+def main(): #zdefiniowanie funkcji głównej polegającej na pobraniu informacji z pliku tekstowego oraz obliczenia BMI
+        df = pd.read_excel(r'C:\Users\janmi\Desktop\XD.xlsx') #pobranie informacji z pliku
+        df['BMI'] = df['Waga'] / (df['Wzrost'] / 100) ** 2 #przetworzenie informacji o wadze i wzroście w danej kolumnie oraz obliczenie BMI
+        print(df[['Waga', 'Wzrost', 'BMI']]) #wypisanie wartości wagi, wzrostu oraz obliczonego wcześniej BMI
+
+main() #wywołanie funkcji głównej
